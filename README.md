@@ -1,12 +1,25 @@
 # EmotiVAE — Conditional Face Expression Generation
 
-## Visualizations
+
+## Visualizations & Explanations
 
 ### AE vs VAE Explained
-![AE vs VAE Explained](AE_vs_VAE_Explained.svg)
+This diagram illustrates the fundamental differences between Autoencoders (AE) and Variational Autoencoders (VAE). In our project, understanding this distinction is crucial: AEs learn to reconstruct input data, while VAEs introduce probabilistic latent variables, enabling controlled sampling and generation. Our Conditional VAE builds on these principles to allow expression manipulation in faces.
 
 ### AES Architecture
-![AES Architecture](AES.svg)
+The AES architecture diagram shows the structure of our custom encoder-decoder network. It highlights the use of ELU activations, Kaiming initialization, and dropout for robust training. This architecture forms the backbone of our model, supporting both AE and VAE variants for facial expression generation.
+
+---
+
+## Simple Workflow Diagram
+
+```mermaid
+flowchart LR
+   A[Prepare Dataset] --> B[Initialize Workspace]
+   B --> C[Train Conditional VAE]
+   C --> D[Generate Outputs]
+   D --> E[Visualize Results]
+```
 
 ## About
 

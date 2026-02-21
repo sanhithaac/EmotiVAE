@@ -15,22 +15,47 @@ Implementation of AE, VAE, and Conditional VAE (CVAE) in PyTorch. The CVAE is tr
 1. Clone the repository:
    ```bash
    git clone https://github.com/<your-username>/EmotiVAE.git
-   cd EmotiVAE
+   # EmotiVAE
+
+   EmotiVAE is a Conditional Variational Autoencoder for facial expression generation and manipulation, built on the UTKFace dataset. The project includes custom architecture, data handling, and visualization scripts for exploring latent space and generating new faces.
+
+   ## Workflow Overview
+
+   ```mermaid
+   graph TD
+      A[Start: Dataset Preparation] --> B[Initialize Workspace]
+      B --> C[Train Conditional VAE]
+      C --> D[Generate Outputs]
+      D --> E[Modify Expressions]
+      D --> F[Sample from Prior]
+      D --> G[Explore Latent Axis]
+      D --> H[Explore PCA Axis]
+      C --> I[Visualize Training]
+      E --> J[Save Modified Images]
+      F --> K[Save Prior Samples]
+      G --> L[Save Latent Visuals]
+      H --> M[Save PCA Visuals]
+      I --> N[Save Training Plots]
+      N --> O[Update README]
+      J --> O
+      K --> O
+      L --> O
+      M --> O
+      O[README: Results & Workflow]
    ```
-2. Create & activate a virtual environment:
-   ```bash
-   python -m pip install virtualenv
-   virtualenv emotivae_env
-   # Linux / macOS
-   source emotivae_env/bin/activate
-   # Windows
-   emotivae_env\Scripts\activate
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Initialise the workspace directories:
+
+   ## Workflow Steps
+
+   1. Prepare the dataset (UTKFace images + smile encoding CSV)
+   2. Initialize workspace directories
+   3. Train the Conditional VAE model
+   4. Generate outputs: modify expressions, sample from prior, explore latent/PCA axes
+   5. Visualize training progress and latent variance
+   6. Update README with results
+
+   ## Usage
+
+   ...existing code...
    ```bash
    python init_workspace.py
    ```

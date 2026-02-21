@@ -1,0 +1,246 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1820' height='860' viewBox='0 0 1820 860'>`n  <rect x="0" y="0" width="100%" height="100%" fill="rgb(255, 255, 255)" />
+  <defs>
+    <style>
+      .link { stroke: rgb(0, 0, 0); stroke-width: 0.58; stroke-opacity: 0.74; fill: none; }
+      .linkSoft { stroke: rgb(0, 0, 0); stroke-width: 0.58; stroke-opacity: 0.55; stroke-dasharray: 4 3; fill: none; }
+      .node { fill: rgb(117, 93, 106); stroke: rgb(0, 0, 0); stroke-width: 1.8; }
+      .h1 { font: 700 37px 'Segoe UI', Arial, sans-serif; fill: rgb(35, 27, 19); }
+      .h2 { font: 700 30px 'Segoe UI', Arial, sans-serif; fill: rgb(35, 27, 19); }
+      .h3 { font: 700 21px 'Segoe UI', Arial, sans-serif; fill: rgb(35, 27, 19); }
+      .txt { font: 500 19px 'Segoe UI', Arial, sans-serif; fill: rgb(50, 40, 30); }
+      .formula { font: 600 18px Consolas, 'Courier New', monospace; fill: rgb(25, 19, 10); }
+      .guide { fill: none; stroke: rgb(0, 0, 0); stroke-width: 2.5; }
+      .funcBox { fill: none; stroke: rgb(0, 0, 0); stroke-width: 2.3; }
+      .funcLine { stroke: rgb(0, 0, 0); stroke-width: 1.1; stroke-opacity: 0.85; }
+    </style>
+  </defs>
+  <text x='910' y='54' text-anchor='middle' class='h1'>AutoEncoder (AE) and Variational AutoEncoder (VAE)</text>
+  <text x='80' y='110' class='h2'>AE</text>
+  <text x='980' y='110' class='h2'>VAE</text>
+  <line class='link' x1='120' y1='170' x2='270' y2='200' />
+  <line class='link' x1='120' y1='170' x2='270' y2='250' />
+  <line class='link' x1='120' y1='170' x2='270' y2='300' />
+  <line class='link' x1='120' y1='170' x2='270' y2='350' />
+  <line class='link' x1='120' y1='210' x2='270' y2='200' />
+  <line class='link' x1='120' y1='210' x2='270' y2='250' />
+  <line class='link' x1='120' y1='210' x2='270' y2='300' />
+  <line class='link' x1='120' y1='210' x2='270' y2='350' />
+  <line class='link' x1='120' y1='250' x2='270' y2='200' />
+  <line class='link' x1='120' y1='250' x2='270' y2='250' />
+  <line class='link' x1='120' y1='250' x2='270' y2='300' />
+  <line class='link' x1='120' y1='250' x2='270' y2='350' />
+  <line class='link' x1='120' y1='290' x2='270' y2='200' />
+  <line class='link' x1='120' y1='290' x2='270' y2='250' />
+  <line class='link' x1='120' y1='290' x2='270' y2='300' />
+  <line class='link' x1='120' y1='290' x2='270' y2='350' />
+  <line class='link' x1='120' y1='330' x2='270' y2='200' />
+  <line class='link' x1='120' y1='330' x2='270' y2='250' />
+  <line class='link' x1='120' y1='330' x2='270' y2='300' />
+  <line class='link' x1='120' y1='330' x2='270' y2='350' />
+  <line class='link' x1='120' y1='370' x2='270' y2='200' />
+  <line class='link' x1='120' y1='370' x2='270' y2='250' />
+  <line class='link' x1='120' y1='370' x2='270' y2='300' />
+  <line class='link' x1='120' y1='370' x2='270' y2='350' />
+  <line class='link' x1='270' y1='200' x2='420' y2='220' />
+  <line class='link' x1='270' y1='200' x2='420' y2='300' />
+  <line class='link' x1='270' y1='250' x2='420' y2='220' />
+  <line class='link' x1='270' y1='250' x2='420' y2='300' />
+  <line class='link' x1='270' y1='300' x2='420' y2='220' />
+  <line class='link' x1='270' y1='300' x2='420' y2='300' />
+  <line class='link' x1='270' y1='350' x2='420' y2='220' />
+  <line class='link' x1='270' y1='350' x2='420' y2='300' />
+  <line class='link' x1='420' y1='220' x2='570' y2='200' />
+  <line class='link' x1='420' y1='220' x2='570' y2='250' />
+  <line class='link' x1='420' y1='220' x2='570' y2='300' />
+  <line class='link' x1='420' y1='220' x2='570' y2='350' />
+  <line class='link' x1='420' y1='300' x2='570' y2='200' />
+  <line class='link' x1='420' y1='300' x2='570' y2='250' />
+  <line class='link' x1='420' y1='300' x2='570' y2='300' />
+  <line class='link' x1='420' y1='300' x2='570' y2='350' />
+  <line class='link' x1='570' y1='200' x2='720' y2='170' />
+  <line class='link' x1='570' y1='200' x2='720' y2='210' />
+  <line class='link' x1='570' y1='200' x2='720' y2='250' />
+  <line class='link' x1='570' y1='200' x2='720' y2='290' />
+  <line class='link' x1='570' y1='200' x2='720' y2='330' />
+  <line class='link' x1='570' y1='200' x2='720' y2='370' />
+  <line class='link' x1='570' y1='250' x2='720' y2='170' />
+  <line class='link' x1='570' y1='250' x2='720' y2='210' />
+  <line class='link' x1='570' y1='250' x2='720' y2='250' />
+  <line class='link' x1='570' y1='250' x2='720' y2='290' />
+  <line class='link' x1='570' y1='250' x2='720' y2='330' />
+  <line class='link' x1='570' y1='250' x2='720' y2='370' />
+  <line class='link' x1='570' y1='300' x2='720' y2='170' />
+  <line class='link' x1='570' y1='300' x2='720' y2='210' />
+  <line class='link' x1='570' y1='300' x2='720' y2='250' />
+  <line class='link' x1='570' y1='300' x2='720' y2='290' />
+  <line class='link' x1='570' y1='300' x2='720' y2='330' />
+  <line class='link' x1='570' y1='300' x2='720' y2='370' />
+  <line class='link' x1='570' y1='350' x2='720' y2='170' />
+  <line class='link' x1='570' y1='350' x2='720' y2='210' />
+  <line class='link' x1='570' y1='350' x2='720' y2='250' />
+  <line class='link' x1='570' y1='350' x2='720' y2='290' />
+  <line class='link' x1='570' y1='350' x2='720' y2='330' />
+  <line class='link' x1='570' y1='350' x2='720' y2='370' />
+  <circle class='node' cx='120' cy='170' r='10' />
+  <circle class='node' cx='120' cy='210' r='10' />
+  <circle class='node' cx='120' cy='250' r='10' />
+  <circle class='node' cx='120' cy='290' r='10' />
+  <circle class='node' cx='120' cy='330' r='10' />
+  <circle class='node' cx='120' cy='370' r='10' />
+  <circle class='node' cx='270' cy='200' r='10' />
+  <circle class='node' cx='270' cy='250' r='10' />
+  <circle class='node' cx='270' cy='300' r='10' />
+  <circle class='node' cx='270' cy='350' r='10' />
+  <circle class='node' cx='420' cy='220' r='10' />
+  <circle class='node' cx='420' cy='300' r='10' />
+  <circle class='node' cx='570' cy='200' r='10' />
+  <circle class='node' cx='570' cy='250' r='10' />
+  <circle class='node' cx='570' cy='300' r='10' />
+  <circle class='node' cx='570' cy='350' r='10' />
+  <circle class='node' cx='720' cy='170' r='10' />
+  <circle class='node' cx='720' cy='210' r='10' />
+  <circle class='node' cx='720' cy='250' r='10' />
+  <circle class='node' cx='720' cy='290' r='10' />
+  <circle class='node' cx='720' cy='330' r='10' />
+  <circle class='node' cx='720' cy='370' r='10' />
+  <rect class='guide' x='245' y='175' width='90' height='200' rx='12' ry='12' />
+  <rect class='guide' x='410' y='205' width='60' height='130' rx='12' ry='12' />
+  <rect class='guide' x='545' y='175' width='90' height='200' rx='12' ry='12' />
+  <text x='270' y='158' text-anchor='middle' class='txt'>Encoder</text>
+  <text x='420' y='190' text-anchor='middle' class='txt'>Latent Space</text>
+  <text x='570' y='158' text-anchor='middle' class='txt'>Decoder</text>
+  <text x='120' y='405' text-anchor='middle' class='txt'>x</text>
+  <text x='720' y='405' text-anchor='middle' class='txt'>x_hat</text>
+  <rect class='funcBox' x='70' y='455' width='790' height='180' rx='14' ry='14' />
+  <text x='95' y='492' class='h3'>Functions</text>
+  <line class='funcLine' x1='90' y1='506' x2='840' y2='506' />
+  <text x='95' y='545' class='formula'>z = f_phi(x)</text>
+  <text x='95' y='580' class='formula'>x_hat = g_theta(z)</text>
+  <text x='95' y='615' class='formula'>L_AE = ||x - x_hat||^2</text>
+  <line class='link' x1='1020' y1='170' x2='1140' y2='200' />
+  <line class='link' x1='1020' y1='170' x2='1140' y2='250' />
+  <line class='link' x1='1020' y1='170' x2='1140' y2='300' />
+  <line class='link' x1='1020' y1='170' x2='1140' y2='350' />
+  <line class='link' x1='1020' y1='210' x2='1140' y2='200' />
+  <line class='link' x1='1020' y1='210' x2='1140' y2='250' />
+  <line class='link' x1='1020' y1='210' x2='1140' y2='300' />
+  <line class='link' x1='1020' y1='210' x2='1140' y2='350' />
+  <line class='link' x1='1020' y1='250' x2='1140' y2='200' />
+  <line class='link' x1='1020' y1='250' x2='1140' y2='250' />
+  <line class='link' x1='1020' y1='250' x2='1140' y2='300' />
+  <line class='link' x1='1020' y1='250' x2='1140' y2='350' />
+  <line class='link' x1='1020' y1='290' x2='1140' y2='200' />
+  <line class='link' x1='1020' y1='290' x2='1140' y2='250' />
+  <line class='link' x1='1020' y1='290' x2='1140' y2='300' />
+  <line class='link' x1='1020' y1='290' x2='1140' y2='350' />
+  <line class='link' x1='1020' y1='330' x2='1140' y2='200' />
+  <line class='link' x1='1020' y1='330' x2='1140' y2='250' />
+  <line class='link' x1='1020' y1='330' x2='1140' y2='300' />
+  <line class='link' x1='1020' y1='330' x2='1140' y2='350' />
+  <line class='link' x1='1020' y1='370' x2='1140' y2='200' />
+  <line class='link' x1='1020' y1='370' x2='1140' y2='250' />
+  <line class='link' x1='1020' y1='370' x2='1140' y2='300' />
+  <line class='link' x1='1020' y1='370' x2='1140' y2='350' />
+  <line class='link' x1='1140' y1='200' x2='1260' y2='220' />
+  <line class='link' x1='1140' y1='200' x2='1260' y2='300' />
+  <line class='link' x1='1140' y1='200' x2='1340' y2='220' />
+  <line class='link' x1='1140' y1='200' x2='1340' y2='300' />
+  <line class='link' x1='1140' y1='250' x2='1260' y2='220' />
+  <line class='link' x1='1140' y1='250' x2='1260' y2='300' />
+  <line class='link' x1='1140' y1='250' x2='1340' y2='220' />
+  <line class='link' x1='1140' y1='250' x2='1340' y2='300' />
+  <line class='link' x1='1140' y1='300' x2='1260' y2='220' />
+  <line class='link' x1='1140' y1='300' x2='1260' y2='300' />
+  <line class='link' x1='1140' y1='300' x2='1340' y2='220' />
+  <line class='link' x1='1140' y1='300' x2='1340' y2='300' />
+  <line class='link' x1='1140' y1='350' x2='1260' y2='220' />
+  <line class='link' x1='1140' y1='350' x2='1260' y2='300' />
+  <line class='link' x1='1140' y1='350' x2='1340' y2='220' />
+  <line class='link' x1='1140' y1='350' x2='1340' y2='300' />
+  <line class='linkSoft' x1='1260' y1='220' x2='1460' y2='220' />
+  <line class='linkSoft' x1='1260' y1='220' x2='1460' y2='300' />
+  <line class='linkSoft' x1='1260' y1='300' x2='1460' y2='220' />
+  <line class='linkSoft' x1='1260' y1='300' x2='1460' y2='300' />
+  <line class='linkSoft' x1='1340' y1='220' x2='1460' y2='220' />
+  <line class='linkSoft' x1='1340' y1='220' x2='1460' y2='300' />
+  <line class='linkSoft' x1='1340' y1='300' x2='1460' y2='220' />
+  <line class='linkSoft' x1='1340' y1='300' x2='1460' y2='300' />
+  <line class='link' x1='1460' y1='220' x2='1580' y2='200' />
+  <line class='link' x1='1460' y1='220' x2='1580' y2='250' />
+  <line class='link' x1='1460' y1='220' x2='1580' y2='300' />
+  <line class='link' x1='1460' y1='220' x2='1580' y2='350' />
+  <line class='link' x1='1460' y1='300' x2='1580' y2='200' />
+  <line class='link' x1='1460' y1='300' x2='1580' y2='250' />
+  <line class='link' x1='1460' y1='300' x2='1580' y2='300' />
+  <line class='link' x1='1460' y1='300' x2='1580' y2='350' />
+  <line class='link' x1='1580' y1='200' x2='1700' y2='170' />
+  <line class='link' x1='1580' y1='200' x2='1700' y2='210' />
+  <line class='link' x1='1580' y1='200' x2='1700' y2='250' />
+  <line class='link' x1='1580' y1='200' x2='1700' y2='290' />
+  <line class='link' x1='1580' y1='200' x2='1700' y2='330' />
+  <line class='link' x1='1580' y1='200' x2='1700' y2='370' />
+  <line class='link' x1='1580' y1='250' x2='1700' y2='170' />
+  <line class='link' x1='1580' y1='250' x2='1700' y2='210' />
+  <line class='link' x1='1580' y1='250' x2='1700' y2='250' />
+  <line class='link' x1='1580' y1='250' x2='1700' y2='290' />
+  <line class='link' x1='1580' y1='250' x2='1700' y2='330' />
+  <line class='link' x1='1580' y1='250' x2='1700' y2='370' />
+  <line class='link' x1='1580' y1='300' x2='1700' y2='170' />
+  <line class='link' x1='1580' y1='300' x2='1700' y2='210' />
+  <line class='link' x1='1580' y1='300' x2='1700' y2='250' />
+  <line class='link' x1='1580' y1='300' x2='1700' y2='290' />
+  <line class='link' x1='1580' y1='300' x2='1700' y2='330' />
+  <line class='link' x1='1580' y1='300' x2='1700' y2='370' />
+  <line class='link' x1='1580' y1='350' x2='1700' y2='170' />
+  <line class='link' x1='1580' y1='350' x2='1700' y2='210' />
+  <line class='link' x1='1580' y1='350' x2='1700' y2='250' />
+  <line class='link' x1='1580' y1='350' x2='1700' y2='290' />
+  <line class='link' x1='1580' y1='350' x2='1700' y2='330' />
+  <line class='link' x1='1580' y1='350' x2='1700' y2='370' />
+  <circle class='node' cx='1020' cy='170' r='10' />
+  <circle class='node' cx='1020' cy='210' r='10' />
+  <circle class='node' cx='1020' cy='250' r='10' />
+  <circle class='node' cx='1020' cy='290' r='10' />
+  <circle class='node' cx='1020' cy='330' r='10' />
+  <circle class='node' cx='1020' cy='370' r='10' />
+  <circle class='node' cx='1140' cy='200' r='10' />
+  <circle class='node' cx='1140' cy='250' r='10' />
+  <circle class='node' cx='1140' cy='300' r='10' />
+  <circle class='node' cx='1140' cy='350' r='10' />
+  <circle class='node' cx='1260' cy='220' r='10' />
+  <circle class='node' cx='1260' cy='300' r='10' />
+  <circle class='node' cx='1340' cy='220' r='10' />
+  <circle class='node' cx='1340' cy='300' r='10' />
+  <circle class='node' cx='1460' cy='220' r='10' />
+  <circle class='node' cx='1460' cy='300' r='10' />
+  <circle class='node' cx='1580' cy='200' r='10' />
+  <circle class='node' cx='1580' cy='250' r='10' />
+  <circle class='node' cx='1580' cy='300' r='10' />
+  <circle class='node' cx='1580' cy='350' r='10' />
+  <circle class='node' cx='1700' cy='170' r='10' />
+  <circle class='node' cx='1700' cy='210' r='10' />
+  <circle class='node' cx='1700' cy='250' r='10' />
+  <circle class='node' cx='1700' cy='290' r='10' />
+  <circle class='node' cx='1700' cy='330' r='10' />
+  <circle class='node' cx='1700' cy='370' r='10' />
+  <rect class='guide' x='1115' y='175' width='90' height='200' rx='12' ry='12' />
+  <rect class='guide' x='1235' y='205' width='50' height='130' rx='12' ry='12' />
+  <rect class='guide' x='1315' y='205' width='50' height='130' rx='12' ry='12' />
+  <rect class='guide' x='1435' y='205' width='50' height='130' rx='12' ry='12' />
+  <rect class='guide' x='1555' y='175' width='90' height='200' rx='12' ry='12' />
+  <text x='1140' y='158' text-anchor='middle' class='txt'>Encoder</text>
+  <text x='1260' y='190' text-anchor='middle' class='txt'>mu(x)</text>
+  <text x='1340' y='190' text-anchor='middle' class='txt'>logvar(x)</text>
+  <text x='1460' y='190' text-anchor='middle' class='txt'>z</text>
+  <text x='1580' y='158' text-anchor='middle' class='txt'>Decoder</text>
+  <text x='1020' y='405' text-anchor='middle' class='txt'>x</text>
+  <text x='1700' y='405' text-anchor='middle' class='txt'>x_hat</text>
+  <rect class='funcBox' x='970' y='455' width='790' height='215' rx='14' ry='14' />
+  <text x='995' y='492' class='h3'>Functions</text>
+  <line class='funcLine' x1='990' y1='506' x2='1740' y2='506' />
+  <text x='995' y='545' class='formula'>q_phi(z|x) = N(mu(x), sigma(x)^2 I)</text>
+  <text x='995' y='580' class='formula'>z = mu + sigma * epsilon,   epsilon ~ N(0, I)</text>
+  <text x='995' y='615' class='formula'>x_hat = g_theta(z)</text>
+  <text x='995' y='650' class='formula'>L_VAE = Recon(x, x_hat) + KL(q_phi(z|x) || N(0, I))</text>
+</svg>
+

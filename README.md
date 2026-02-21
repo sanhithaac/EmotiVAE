@@ -1,5 +1,13 @@
 # EmotiVAE — Conditional Face Expression Generation
 
+## Visualizations
+
+### AE vs VAE Explained
+![AE vs VAE Explained](AE_vs_VAE_Explained.svg)
+
+### AES Architecture
+![AES Architecture](AES.svg)
+
 ## About
 
 Implementation of AE, VAE, and Conditional VAE (CVAE) in PyTorch. The CVAE is trained on faces from the [UTKFace Dataset](https://susanqq.github.io/UTKFace/) with a hand-crafted continuous encoding of expression intensity to enable conditional generation of synthetic faces at a desired expression level. The project provides both an RGB and a Grayscale pipeline.

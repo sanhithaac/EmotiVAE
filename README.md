@@ -19,30 +19,32 @@ Implementation of AE, VAE, and Conditional VAE (CVAE) in PyTorch. The CVAE is tr
 
    EmotiVAE is a Conditional Variational Autoencoder for facial expression generation and manipulation, built on the UTKFace dataset. The project includes custom architecture, data handling, and visualization scripts for exploring latent space and generating new faces.
 
-   ## Workflow Overview
 
-   ```mermaid
-   graph TD
-      A[Start: Dataset Preparation] --> B[Initialize Workspace]
-      B --> C[Train Conditional VAE]
-      C --> D[Generate Outputs]
-      D --> E[Modify Expressions]
-      D --> F[Sample from Prior]
-      D --> G[Explore Latent Axis]
-      D --> H[Explore PCA Axis]
-      C --> I[Visualize Training]
-      E --> J[Save Modified Images]
-      F --> K[Save Prior Samples]
-      G --> L[Save Latent Visuals]
-      H --> M[Save PCA Visuals]
-      I --> N[Save Training Plots]
-      N --> O[Update README]
-      J --> O
-      K --> O
-      L --> O
-      M --> O
-      O[README: Results & Workflow]
-   ```
+## Actual Flow Diagram
+
+```mermaid
+flowchart TD
+    A[Load Images] --> B[Preprocess Data]
+    B --> C[Initialize Workspace]
+    C --> D[Train Conditional VAE]
+    D --> E[Generate Outputs]
+    E --> F[Modify Expressions]
+    E --> G[Sample from Prior]
+    E --> H[Explore Latent Axis]
+    E --> I[Explore PCA Axis]
+    D --> J[Visualize Training]
+    F --> K[Save Modified Images]
+    G --> L[Save Prior Samples]
+    H --> M[Save Latent Visuals]
+    I --> N[Save PCA Visuals]
+    J --> O[Save Training Plots]
+    K --> P[Update README]
+    L --> P
+    M --> P
+    N --> P
+    O --> P
+    P[README: Results & Workflow]
+```
 
    ## Workflow Steps
 

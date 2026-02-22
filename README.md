@@ -1,25 +1,38 @@
 # EmotiVAE — Conditional Face Expression Generation
 
-
-## Visualizations & Explanations
+## Visualizations
 
 ### AE vs VAE Explained
-This diagram illustrates the fundamental differences between Autoencoders (AE) and Variational Autoencoders (VAE). In our project, understanding this distinction is crucial: AEs learn to reconstruct input data, while VAEs introduce probabilistic latent variables, enabling controlled sampling and generation. Our Conditional VAE builds on these principles to allow expression manipulation in faces.
+![AE vs VAE Explained](AE_vs_VAE_Explained.svg)
+This diagram visually compares the core differences between Autoencoders (AE) and Variational Autoencoders (VAE). In our project, understanding this distinction is crucial: AE learns to reconstruct images, while VAE learns a probabilistic latent space, enabling conditional generation and manipulation of facial expressions. The VAE's structure is the foundation for our Conditional VAE (CVAE), which is used to generate faces with controlled expression intensity.
 
 ### AES Architecture
-The AES architecture diagram shows the structure of our custom encoder-decoder network. It highlights the use of ELU activations, Kaiming initialization, and dropout for robust training. This architecture forms the backbone of our model, supporting both AE and VAE variants for facial expression generation.
+![AES Architecture](AES.svg)
+This SVG illustrates the architecture of our custom AES (Autoencoder Structure) model. It highlights the encoder, decoder, and the flow of data through the network. The AES is designed with ELU activations, Kaiming initialization, and dropout for robust training. This architecture is adapted for both AE and VAE variants in our project, forming the backbone for conditional face generation.
 
 ---
 
-## Simple Workflow Diagram
+## Project Workflow (Mermaid)
 
 ```mermaid
-flowchart LR
+flowchart TD
    A[Prepare Dataset] --> B[Initialize Workspace]
-   B --> C[Train Conditional VAE]
-   C --> D[Generate Outputs]
-   D --> E[Visualize Results]
+   B --> C[Train Model (AE/VAE/CVAE)]
+   C --> D[Generate & Modify Faces]
+   D --> E[Visualize Latent Space]
+   D --> F[Save Outputs]
+   E --> F
+   F --> G[Update README]
 ```
+
+**Workflow Description:**
+1. **Prepare Dataset:** Load UTKFace images and encode expression intensities.
+2. **Initialize Workspace:** Set up directories and environment for training.
+3. **Train Model:** Train AE, VAE, or CVAE architectures on the dataset.
+4. **Generate & Modify Faces:** Use the trained model to generate new faces or modify expressions.
+5. **Visualize Latent Space:** Explore latent axes and PCA to understand model behavior.
+6. **Save Outputs:** Store generated images, plots, and logs.
+7. **Update README:** Document results and workflow for reproducibility.
 
 ## About
 

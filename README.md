@@ -2,13 +2,26 @@
 
 ## Visualizations
 
-### AE vs VAE Explained
+### Autoencoder (AE)
 ![AE vs VAE Explained](AE_vs_VAE_Explained.svg)
-This diagram visually compares the core differences between Autoencoders (AE) and Variational Autoencoders (VAE). In our project, understanding this distinction is crucial: AE learns to reconstruct images, while VAE learns a probabilistic latent space, enabling conditional generation and manipulation of facial expressions. The VAE's structure is the foundation for our Conditional VAE (CVAE), which is used to generate faces with controlled expression intensity.
+
+An autoencoder compresses an input image into a latent vector, then decodes it back to reconstruct the original. This defines the core encoder-decoder concept and serves as the baseline for probabilistic latent modeling.
+
+**AE properties:**
+- Deterministic latent vector
+- Reconstruction-only objective
+
+---
 
 ### AES Architecture
 ![AES Architecture](AES.svg)
-This SVG illustrates the architecture of our custom AES (Autoencoder Structure) model. It highlights the encoder, decoder, and the flow of data through the network. The AES is designed with ELU activations, Kaiming initialization, and dropout for robust training. This architecture is adapted for both AE and VAE variants in our project, forming the backbone for conditional face generation.
+
+The AES architecture illustrates the flow from input to latent space and back to output, using ELU activations, Kaiming initialization, and dropout for robust training. This structure is adapted for both AE and VAE variants, enabling conditional face generation and manipulation.
+
+**AES properties:**
+- Modular encoder-decoder design
+- Supports both deterministic and probabilistic latent spaces
+- Enhanced with dropout and advanced initialization for generalization
 
 ---
 
